@@ -1,3 +1,3 @@
 from peewee import SqliteDatabase as Sqlite
 
-db = Sqlite("Database\clientes.db")
+db = Sqlite("Seu caminho/nome de sua preferencia.db")
