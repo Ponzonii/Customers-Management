@@ -1,0 +1,92 @@
+<form
+  class="c-form"
+  {%
+  if
+  cliente
+  %}
+  action="{{ url_for('cliente.atualizar_cliente', cliente_id=cliente.id) }}"
+  {%
+  else
+  %}
+  action="{{ url_for('cliente.inserir_cliente') }}"
+  {%
+  endif
+  %}
+  method="{% if cliente %}PUT{% else %}POST{% endif %}"
+  {%
+  if
+  cliente
+  %}
+  c-swap="#cliente-{{ cliente.id }}"
+  {%
+  else
+  %}
+  c-append="#lista-clientes"
+  {%
+  endif
+  %}
+  c-reload-container="true"
+>
+  <div class="mb-3">
+    <label for="inputNome" class="form-label"
+      ><i class="mdi mdi-pencil-circle"></i> Nome</label
+    >
+    <input
+      {%
+      if
+      cliente
+      %}value="{{ cliente.nome }}"
+      {%
+      endif
+      %}
+      type="text"
+      name="nome"
+      class="form-control"
+      id="inputNome"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label"
+      ><i class="mdi mdi-email"></i> Endereço de email</label
+    >
+    <input
+      {%
+      if
+      cliente
+      %}value="{{ cliente.email }}"
+      {%
+      endif
+      %}
+      type="email"
+      name="email"
+      class="form-control"
+      id="inputEmail"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="inputNascimento" class="form-label"
+      ><i class="mdi mdi-calendar"></i> Data de nascimento</label
+    >
+    <input
+      {%
+      if
+      cliente
+      %}value="{{ cliente.data_nascimento }}"
+      {%
+      endif
+      %}
+      type="date"
+      name="dataNascimento"
+      class="form-control"
+      id="inputNascimento"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-success">
+    {% if cliente %}<i class="mdi mdi-account-file"></i> Salvar cliente.{% else
+    %}<i class="mdi mdi-account-plus"></i> Adicionar cliente.{% endif %}
+  </button>
+</form>

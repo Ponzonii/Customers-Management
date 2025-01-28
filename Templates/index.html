@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestão de Clientes.</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .mdi-account-box-multiple {
+      font-size: 3rem;
+      color: #000000;
+    }
+
+    .mdi-form-select {
+      font-size: 3rem;
+      color: #000000;
+    }
+
+    .mdi-account-group {
+      font-size: 3rem;
+      color: #000000;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    hr {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      margin-bottom: 15px;
+    }
+
+    #buttons-tr {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .icons-informações {
+      color: black;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1><i class="mdi mdi-account-box-multiple"> </i> Gestão de Clientes.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam et
+        excepturi pariatur, debitis aliquid, totam voluptates amet, tempora in
+        nihil eligendi nobis ullam esse at iure. Fugit similique soluta illo.
+        Quisquam, nostrum. Eligendi asperiores repudiandae deleniti dolor, ut
+        debitis. Inventore sequi similique illo voluptas, corrupti quaerat
+        asperiores magni corporis reiciendis veritatis doloribus aut eveniet
+        quia odio amet impedit perferendis aliquam! Temporibus sequi
+        voluptatibus, inventore, quisquam aut reiciendis dolores ducimus hic
+        error quos, aliquid perferendis adipisci alias nobis quis in magnam
+        obcaecati ea id molestias. Iusto delectus impedit doloremque quisquam
+        tenetur.
+      </p>
+      <hr />
+      <!-- Formulário de Cadastro de Clientes. -->
+      <h2><i class="mdi mdi-form-select"></i> Formulário.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempore,
+        eligendi expedita nesciunt, sint quasi doloremque commodi consectetur
+        doloribus voluptas laborum possimus in magni illum nihil libero est vel
+        eius! Consequuntur officia id magni facilis. Porro voluptas nesciunt
+        iure quibusdam quia? Nam repellat, officiis asperiores, magni ad id ipsa
+        suscipit officia magnam cumque optio fuga explicabo harum veritatis
+        dolorem! Reiciendis?
+      </p>
+      <div
+        id="form-cliente"
+        c-container="{{ url_for('cliente.form_cliente') }}"
+      ></div>
+      <hr />
+      <!-- Lista de Clientes. -->
+      <h2><i class="mdi mdi-account-group"></i> Lista de Clientes.</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat eum
+        aut eligendi, quam magnam quis excepturi veniam esse quo nulla at
+        perferendis quibusdam ducimus iure eos adipisci qui, asperiores
+        voluptates. Cumque nihil vitae quaerat asperiores qui sequi similique
+        aliquam sunt quasi tempora sint quia consectetur ipsa, fuga hic dolores,
+        beatae, perferendis accusantium voluptatum eveniet totam sapiente
+        impedit necessitatibus. Ducimus, rerum.
+      </p>
+      <div c-container="{{ url_for('cliente.listar_clientes') }}"></div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <i class="mdi mdi-information-variant-box"></i> Informações
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              style="color: #000000"
+            ></button>
+          </div>
+          <div class="modal-body" id="exibir-cliente"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              <i class="mdi mdi-close"></i> Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/cru.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

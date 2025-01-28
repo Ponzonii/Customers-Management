@@ -1,0 +1,31 @@
+<tr id="cliente-{{ cliente.id }}" style="margin-bottom: 10px">
+  <th scope="row">{{ cliente.id }}</th>
+  <td>{{ cliente.nome }}</td>
+  <td id="buttons-tr">
+    <button
+      type="button"
+      class="btn btn-info"
+      c-get="{{ url_for('cliente.detalhe_cliente', cliente_id=cliente.id) }}"
+      c-target="#exibir-cliente"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      <i class="mdi mdi-card-account-details"></i> Info
+    </button>
+    <button
+      class="btn btn-primary"
+      c-get="{{ url_for('cliente.form_edit_cliente', cliente_id=cliente.id) }}"
+      c-target="#form-cliente"
+    >
+      <i class="mdi mdi-account-edit"></i> Editar
+    </button>
+    <button
+      class="btn btn-danger"
+      c-delete="{{ url_for('cliente.deletar_cliente', cliente_id=cliente.id) }}"
+      c-remove-closest="tr"
+    >
+      <i class="mdi mdi-account-remove"></i>
+      Excluir
+    </button>
+  </td>
+</tr>
