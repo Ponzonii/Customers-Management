@@ -1,4 +1,4 @@
-# ðŸ‘¤ Customers-Management
+# í±¤ Customers-Management
 
 This is my repository where I store my Customer Management project, I created it to create knowledge in Python, flask, Peewee, bootstrap, HTML, Jinja, among others.
 
@@ -8,4 +8,5 @@ That's why I'm giving him credit.
 
 <br>
 
-- ðŸ”™ Back to my [profile](https://github.com/Ponzonii)
+- í´™ Back to my [profile](https://github.com/Ponzonii)
+
