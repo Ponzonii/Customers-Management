@@ -1,6 +1,7 @@
 try:
     from flask import Blueprint as Bp, render_template as rt, request as req
     from Database.Models.cliente import Cliente
+    from datetime import datetime
 except ImportError as e:
     print(f"Error: {e}")
     exit()
@@ -18,13 +19,20 @@ def listar_clientes():
 def inserir_cliente():
     data = req.json
 
-    if Cliente.select().where(Cliente.email == data["email"]).exists():
-        return rt("error.html", error="Email já cadastrado!")
+    if (
+        Cliente.select().where(Cliente.email == data["email"]).exists()
+        or Cliente.select().where(Cliente.telefone == data["telefone"]).exists()
+    ):
+        return (
+            rt("error.html", error="Email ou número de telefone já cadastrados!"),
+            400,
+        )
 
     else:
         novo_usuario = Cliente.create(
             nome=data["nome"],
             email=data["email"],
+            telefone=data["telefone"],
             data_nascimento=data["dataNascimento"],
         )
 
@@ -54,17 +62,21 @@ def atualizar_cliente(cliente_id):
 
     cliente = Cliente.get_by_id(cliente_id)
 
-    # Verifica se o novo email já está em uso por outro cliente
     if (
         Cliente.select()
         .where((Cliente.email == data["email"]) & (Cliente.id != cliente_id))
         .exists()
+    ) or (
+        Cliente.select()
+        .where((Cliente.telefone == data["telefone"]) & (Cliente.id != cliente_id))
+        .exists()
     ):
-        return rt("error.html", error="Email já cadastrado!")
+        return rt("error.html", error="Email ou número de telefone já cadastrados!")
 
     else:
         cliente.nome = data["nome"]
         cliente.email = data["email"]
+        cliente.telefone = data["telefone"]
         cliente.data_nascimento = data["dataNascimento"]
         cliente.save()
 

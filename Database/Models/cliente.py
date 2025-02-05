@@ -1,5 +1,5 @@
 try:
-    from peewee import Model, CharField, DateField, DateTimeField
+    from peewee import Model, CharField, IntegerField, DateField, DateTimeField
     from Database.database import db
     import datetime
 except ImportError as e:
@@ -10,8 +10,11 @@ except ImportError as e:
 class Cliente(Model):
     nome = CharField()
     email = CharField()
+    telefone = IntegerField()
     data_nascimento = DateField()
-    data_registro = DateTimeField(default=datetime.datetime.now)
+    data_registro = DateTimeField(
+        default=datetime.datetime.now().strftime("%d/%m/%Y - %H:%M:%S")
+    )
 
     class Meta:
         database = db

@@ -43,12 +43,14 @@
       name="nome"
       class="form-control"
       id="inputNome"
+      placeholder="Exemplo: João Santos"
       required
     />
   </div>
   <div class="mb-3">
     <label for="inputEmail" class="form-label"
-      ><i class="mdi mdi-email"></i> Endereço de email</label
+      ><i class="mdi mdi-email"></i> Endereço de email para contato (apenas
+      um)</label
     >
     <input
       {%
@@ -62,10 +64,34 @@
       name="email"
       class="form-control"
       id="inputEmail"
+      placeholder="email@provedor.endereço"
       required
     />
+    
   </div>
   <div class="mb-3">
+    <div class="mb-3">
+      <label for="inputTel" class="form-label"
+        ><i class="mdi mdi-phone"></i> Telefone para contato (apenas
+        um)</label
+      >
+      <input
+        {%
+        if
+        cliente
+        %}value="{{ cliente.telefone }}"
+        {%
+        endif
+        %}
+        type="tel"
+        name="telefone"
+        class="form-control"
+        id="inputTel"
+        required
+        value="+55"
+      />
+    </div>
+    <div class="mb-3">
     <label for="inputNascimento" class="form-label"
       ><i class="mdi mdi-calendar"></i> Data de nascimento</label
     >
