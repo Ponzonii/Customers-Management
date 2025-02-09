@@ -8,12 +8,12 @@
     cliente.nome }}
   </li>
   <li>
-    <i class="mdi mdi-card-account-phone" class="icons-informações"></i> Email:
-    {{ cliente.email }}
+    <i class="mdi mdi-email" class="icons-informações"></i> Email: {{
+    cliente.email }}
   </li>
   <li>
-    <i class="mdi mdi-phone" class="icons-informações"></i> Telefone: {{
-    cliente.telefone }}
+    <i class="mdi mdi-card-account-phone" class="icons-informações"></i>
+    Telefone: {{ cliente.telefone }}
   </li>
   <li>
     <i
@@ -24,6 +24,6 @@
   </li>
   <li>
     <i class="mdi mdi-cake-variant" class="icons-informações"></i> Data de
-    nascimento: {{ cliente.data_nascimento }}
+    nascimento: {{ cliente.data_nascimento.strftime("%d/%m/%Y") }}
   </li>
 </ul>

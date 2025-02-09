@@ -1,0 +1,33 @@
+body {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#tema-icone {
+  cursor: pointer;
+  font-size: 3rem;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#tema-icone:active {
+  transform: rotate(90deg);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}

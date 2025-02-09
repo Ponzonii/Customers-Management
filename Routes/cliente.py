@@ -1,7 +1,6 @@
 try:
     from flask import Blueprint as Bp, render_template as rt, request as req
     from Database.Models.cliente import Cliente
-    from datetime import datetime
 except ImportError as e:
     print(f"Error: {e}")
     exit()
@@ -9,13 +8,13 @@ except ImportError as e:
 cliente = Bp("cliente", __name__)
 
 
-@cliente.route("/")
+@cliente.route("/list")
 def listar_clientes():
     clientes = Cliente.select()
     return rt("lista_clientes.html", clientes=clientes)
 
 
-@cliente.route("/", methods=["POST"])
+@cliente.route("/new", methods=["POST"])
 def inserir_cliente():
     data = req.json
 
@@ -39,18 +38,18 @@ def inserir_cliente():
         return rt("item_cliente.html", cliente=novo_usuario)
 
 
-@cliente.route("/new")
+@cliente.route("/form/new")
 def form_cliente():
     return rt("form_cliente.html")
 
 
-@cliente.route("/<int:cliente_id>")
+@cliente.route("/<int:cliente_id>/details")
 def detalhe_cliente(cliente_id):
     cliente = Cliente.get_by_id(cliente_id)
     return rt("detalhe_cliente.html", cliente=cliente)
 
 
-@cliente.route("/<int:cliente_id>/edit")
+@cliente.route("/<int:cliente_id>/form/edit")
 def form_edit_cliente(cliente_id):
     cliente = Cliente.get_by_id(cliente_id)
     return rt("form_cliente.html", cliente=cliente)
@@ -83,7 +82,10 @@ def atualizar_cliente(cliente_id):
         return rt("item_cliente.html", cliente=cliente)
 
 
-@cliente.route("/<int:cliente_id>", methods=["DELETE"])
+@cliente.route("/<int:cliente_id>/delete", methods=["DELETE"])
 def deletar_cliente(cliente_id):
-    Cliente.delete_by_id(cliente_id)
-    return {"Deletado com succeso": "ok"}
+    cliente_delete = Cliente.delete_by_id(cliente_id)
+
+    if cliente_delete == 1:
+        return {"Deletado com succeso": "ok"}
+    # TODO: implementar mensagem de erro caso não seja possível deletar um cliente
