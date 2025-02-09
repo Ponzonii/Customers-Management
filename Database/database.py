@@ -1,3 +1,3 @@
 from peewee import SqliteDatabase as Sqlite
 
-db = Sqlite("clientes.db")
+db = Sqlite("Seu Caminho/Nome de sua preferência.db")
