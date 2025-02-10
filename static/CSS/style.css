@@ -1,24 +1,29 @@
+/* Smooth transition for background and text color changes */
 body {
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
+/* Flex container for alignment and spacing */
 .start {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row; /* Items arranged in a row */
+  align-items: center; /* Vertically centered */
+  justify-content: space-between; /* Space between elements */
 }
 
-#tema-icone {
-  cursor: pointer;
-  font-size: 3rem;
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+/* Styling for the theme toggle icon */
+#icon-teme {
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  font-size: 3rem; /* Large icon */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition */
 }
 
-#tema-icone:active {
+/* Rotate the icon when clicked */
+#icon-teme:active {
   transform: rotate(90deg);
 }
 
+/* Headings with large font sizes */
 h1 {
   font-size: 3rem;
 }
@@ -28,6 +33,7 @@ h2 {
   margin-top: 2rem;
 }
 
+/* Add space below paragraphs */
 p {
   margin-bottom: 2rem;
 }

@@ -1,7 +1,12 @@
 <tr id="customer-{{ customer.id }}">
+  <!-- Customer ID displayed in the first column -->
   <th scope="row" class="align-center">{{ customer.id }}</th>
+
+  <!-- Customer name displayed in the second column -->
   <td class="align-center">{{ customer.name }}</td>
+
   <td id="buttons-tr">
+    <!-- Button to view customer details in a modal -->
     <button
       type="button"
       class="btn btn-info"
@@ -12,6 +17,8 @@
     >
       <i class="mdi mdi-card-account-details"></i> Info
     </button>
+
+    <!-- Button to edit customer information -->
     <button
       class="btn btn-primary"
       c-get="{{ url_for('customers.form_edit_customer', customer_id=customer.id) }}"
@@ -19,6 +26,8 @@
     >
       <i class="mdi mdi-account-edit"></i> Editar
     </button>
+
+    <!-- Button to delete the customer -->
     <button
       class="btn btn-danger"
       c-delete="{{ url_for('customers.delete_customer', customer_id=customer.id) }}"

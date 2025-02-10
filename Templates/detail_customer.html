@@ -1,29 +1,31 @@
 <ul style="list-style: none">
+  <!-- Customer identifier -->
   <li>
-    <i class="mdi mdi-account-box" class="icons-informações"></i>
+    <i class="mdi mdi-account-box"></i>
     Indentificador: {{ customer.id }}
   </li>
+
+  <!-- Customer's name -->
+  <li><i class="mdi mdi-rename-box"></i> Nome: {{ customer.name }}</li>
+
+  <!-- Customer's email -->
+  <li><i class="mdi mdi-email"></i> Email: {{ customer.email }}</li>
+
+  <!-- Customer's phone number -->
   <li>
-    <i class="mdi mdi-rename-box" class="icons-informações"></i> Nome: {{
-    customer.name }}
-  </li>
-  <li>
-    <i class="mdi mdi-email" class="icons-informações"></i> Email: {{
-    customer.email }}
-  </li>
-  <li>
-    <i class="mdi mdi-card-account-phone" class="icons-informações"></i>
+    <i class="mdi mdi-card-account-phone"></i>
     Telefone: {{ customer.phone }}
   </li>
+
+  <!-- Customer's registration date -->
   <li>
-    <i
-      class="mdi mdi-clipboard-text-clock-outline"
-      class="icons-informações"
-    ></i>
+    <i class="mdi mdi-clipboard-text-clock-outline"></i>
     Data de registro: {{ customer.date_register }}
   </li>
+
+  <!-- Customer's date of birth -->
   <li>
-    <i class="mdi mdi-cake-variant" class="icons-informações"></i> Data de
-    nascimento: {{ customer.date_birth.strftime("%d/%m/%Y") }}
+    <i class="mdi mdi-cake-variant"></i> Data de nascimento: {{
+    customer.date_birth.strftime("%d/%m/%Y") }}
   </li>
 </ul>

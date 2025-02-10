@@ -1,12 +1,21 @@
 <table class="table" border="0.5">
+  <!-- Table header containing column titles -->
   <thead>
     <tr>
+      <!-- Column for customer identifier -->
       <th scope="col">Indentificador</th>
+
+      <!-- Column for customer name -->
       <th scope="col">Nome</th>
+
+      <!-- Empty column for action buttons (Edit, Delete, Info) -->
       <th scope="col"></th>
     </tr>
   </thead>
+
+  <!-- Table body where customer data will be dynamically inserted -->
   <tbody id="list-customers">
+    <!-- Loop through each customer and include the 'item_customer.html' template -->
     {% for customer in customers %} {% include 'item_customer.html' %} {% endfor
     %}
   </tbody>

@@ -81,10 +81,10 @@ def update_customer(customer_id):
         return rt("error.html", error="Email ou número de telefone já cadastrados!")
     else:
         # Update customer information
-        customer.nome = data["name"]
+        customer.name = data["name"]
         customer.email = data["email"]
-        customer.telefone = data["phone"]
-        customer.data_nascimento = data["dateBirth"]
+        customer.phone = data["phone"]
+        customer.dateBirth = data["dateBirth"]
         customer.save()
         return rt("item_customer.html", customer=customer)
 
