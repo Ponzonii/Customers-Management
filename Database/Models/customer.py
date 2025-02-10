@@ -7,12 +7,12 @@ except ImportError as e:
     exit()
 
 
-class Cliente(Model):
-    nome = CharField()
+class Customer(Model):
+    name = CharField()
     email = CharField()
-    telefone = IntegerField()
-    data_nascimento = DateField()
-    data_registro = DateTimeField(
+    phone = IntegerField()
+    date_birth = DateField()
+    date_register = DateTimeField(
         default=datetime.datetime.now().strftime("%d/%m/%Y - %H:%M:%S")
     )
 

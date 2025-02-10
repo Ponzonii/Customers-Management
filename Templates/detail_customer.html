@@ -1,29 +1,29 @@
 <ul style="list-style: none">
   <li>
     <i class="mdi mdi-account-box" class="icons-informações"></i>
-    Indentificador: {{ cliente.id }}
+    Indentificador: {{ customer.id }}
   </li>
   <li>
     <i class="mdi mdi-rename-box" class="icons-informações"></i> Nome: {{
-    cliente.nome }}
+    customer.name }}
   </li>
   <li>
     <i class="mdi mdi-email" class="icons-informações"></i> Email: {{
-    cliente.email }}
+    customer.email }}
   </li>
   <li>
     <i class="mdi mdi-card-account-phone" class="icons-informações"></i>
-    Telefone: {{ cliente.telefone }}
+    Telefone: {{ customer.phone }}
   </li>
   <li>
     <i
       class="mdi mdi-clipboard-text-clock-outline"
       class="icons-informações"
     ></i>
-    Data de registro: {{ cliente.data_registro }}
+    Data de registro: {{ customer.date_register }}
   </li>
   <li>
     <i class="mdi mdi-cake-variant" class="icons-informações"></i> Data de
-    nascimento: {{ cliente.data_nascimento.strftime("%d/%m/%Y") }}
+    nascimento: {{ customer.date_birth.strftime("%d/%m/%Y") }}
   </li>
 </ul>

@@ -1,62 +1,62 @@
 <form
+  id="form-customer"
   class="c-form"
   {%
   if
-  cliente
+  customer
   %}
-  action="{{ url_for('cliente.atualizar_cliente', cliente_id=cliente.id) }}"
+  action="{{ url_for('customers.update_customer', customer_id=customer.id) }}"
   {%
   else
   %}
-  action="{{ url_for('cliente.inserir_cliente') }}"
+  action="{{ url_for('customers.new_customer') }}"
   {%
   endif
   %}
   method="{% if cliente %}PUT{% else %}POST{% endif %}"
   {%
   if
-  cliente
+  customer
   %}
-  c-swap="#cliente-{{ cliente.id }}"
+  c-swap="#customer-{{ customer.id }}"
   {%
   else
   %}
-  c-append="#lista-clientes"
+  c-append="#list-customers"
   {%
   endif
   %}
   c-reload-container="true"
 >
   <div class="mb-3">
-    <label for="inputNome" class="form-label"
+    <label for="inpuName" class="form-label"
       ><i class="mdi mdi-pencil-circle"></i> Nome</label
     >
     <input
       {%
       if
-      cliente
-      %}value="{{ cliente.nome }}"
+      customer
+      %}value="{{ customer.nome }}"
       {%
       endif
       %}
       type="text"
-      name="nome"
+      name="name"
       class="form-control"
-      id="inputNome"
+      id="inpuName"
       placeholder="Exemplo: João Santos"
       required
     />
   </div>
   <div class="mb-3">
     <label for="inputEmail" class="form-label"
-      ><i class="mdi mdi-email"></i> Endereço de email para contato (apenas
-      um)</label
+      ><i class="mdi mdi-email"></i> Seu melhor email</label
     >
     <input
       {%
       if
-      cliente
-      %}value="{{ cliente.email }}"
+      customer
+      %}value="{{ customer.email }}"
       {%
       endif
       %}
@@ -71,48 +71,48 @@
   </div>
   <div class="mb-3">
     <div class="mb-3">
-      <label for="inputTel" class="form-label"
+      <label for="inputPhone" class="form-label"
         ><i class="mdi mdi-phone"></i> Telefone para contato (apenas
         um)</label
       >
       <input
         {%
         if
-        cliente
-        %}value="{{ cliente.telefone }}"
+        customer
+        %}value="{{ customer.phone }}"
         {%
         endif
         %}
-        type="tel"
-        name="telefone"
+        type="phone"
+        name="phone"
         class="form-control"
-        id="inputTel"
+        id="inputPhone"
         required
         value="+55"
       />
     </div>
     <div class="mb-3">
-    <label for="inputNascimento" class="form-label"
+    <label for="inputBirth" class="form-label"
       ><i class="mdi mdi-calendar"></i> Data de nascimento</label
     >
     <input
       {%
       if
-      cliente
-      %}value="{{ cliente.data_nascimento }}"
+      customer
+      %}value="{{ customer.date_birth }}"
       {%
       endif
       %}
       type="date"
-      name="dataNascimento"
+      name="dateBirth"
       class="form-control"
-      id="inputNascimento"
+      id="inputBirth"
       required
     />
   </div>
 
   <button type="submit" class="btn btn-success">
-    {% if cliente %}<i class="mdi mdi-account-file"></i> Salvar cliente.{% else
+    {% if customer %}<i class="mdi mdi-account-file"></i> Salvar cliente.{% else
     %}<i class="mdi mdi-account-plus"></i> Adicionar cliente.{% endif %}
   </button>
 </form>
