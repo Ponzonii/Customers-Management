@@ -2,3 +2,4 @@
 *.cpython-313.pyc
 customers.db
 static/icons
+static/icons/favicon.ico
