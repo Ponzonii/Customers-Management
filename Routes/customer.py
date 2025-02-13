@@ -92,5 +92,5 @@ def update_customer(customer_id):
 # Route to delete a customer
 @customers.route("/<int:customer_id>/delete", methods=["DELETE"])
 def delete_customer(customer_id):
-    customer = Customer.delete_by_id(customer_id)
+    Customer.delete_by_id(customer_id)
     return {"Successful": "ok"}
