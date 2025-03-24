@@ -20,7 +20,7 @@ body {
 
 /* Rotate the icon when clicked */
 #icon-teme:active {
-  transform: rotate(90deg);
+  transform: rotate(360deg);
 }
 
 /* Headings with large font sizes */

@@ -16,6 +16,9 @@
       crossorigin="anonymous"
     />
 
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Icons/favicon.ico') }}" type="image/x-icon" />
+
+
   <!-- Material Design Icons CSS link -->
   <link
     href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
@@ -115,8 +118,8 @@
     </div>
 
     <!-- Custom JavaScript files -->
-    <script src="/static/JS/cru.js"></script>
-    <script src="/static/JS/teme.js"></script>
+    <script src="{{ url_for('static', filename='JS/cru.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='JS/teme.js') }}" defer></script>
 
     <!-- Bootstrap JS bundle link -->
     <script

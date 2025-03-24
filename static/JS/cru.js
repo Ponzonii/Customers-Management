@@ -8,6 +8,18 @@ const $cru = (e) => document.querySelector(e), // Selects a single element
     callbacks: {}, // Stores callback functions
   };
 
+// Function to format URLs with parameters
+function cruFormatURL(url, isReadMethod, params) {
+  if (isReadMethod && params) {
+    const urlObj = new URL(url, window.location.origin);
+    Object.keys(params).forEach((key) =>
+      urlObj.searchParams.append(key, params[key])
+    );
+    return urlObj.toString();
+  }
+  return url;
+}
+
 // Initialization function
 const $C = (e = !1) => {
   if (e) for (let t of Object.keys(e)) $cruConfig[t] = e[t]; // Merge user-defined configurations

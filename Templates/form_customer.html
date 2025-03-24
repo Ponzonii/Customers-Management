@@ -30,21 +30,21 @@
 >
   <!-- Name input field -->
   <div class="mb-3">
-    <label for="inpuName" class="form-label"
+    <label for="inputName" class="form-label"
       ><i class="mdi mdi-pencil-circle"></i> Nome</label
     >
     <input
       {%
       if
       customer
-      %}value="{{ customer.nome }}"
+      %}value="{{ customer.name }}"
       {%
       endif
       %}
       type="text"
       name="name"
       class="form-control"
-      id="inpuName"
+      id="inputName"
       placeholder="Exemplo: João Santos"
       required
     />
@@ -53,7 +53,7 @@
   <!-- Email input field -->
   <div class="mb-3">
     <label for="inputEmail" class="form-label"
-      ><i class="mdi mdi-email"></i> Seu melhor email</label
+      ><i class="mdi mdi-email"></i> Melhor email do cliente</label
     >
     <input
       {%
@@ -85,12 +85,12 @@
       {%
       endif
       %}
-      type="phone"
+      type="number"
       name="phone"
       class="form-control"
       id="inputPhone"
       required
-      value="+55"
+      value="55"
     />
   </div>
 

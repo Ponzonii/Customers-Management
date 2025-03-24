@@ -66,7 +66,7 @@ def details_customer(customer_id):
 @customers.route("/<int:customer_id>/update", methods=["PUT"])
 def update_customer(customer_id):
     data = req.json
-    customer = customer.get_by_id(customer_id)
+    customer = Customer.get_by_id(customer_id)
 
     # Check if email or phone number already exists for another customer
     if (
