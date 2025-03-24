@@ -3,4 +3,4 @@ try:
 except ImportError as e:
     print(f"Error: {e}")
 
-db = Sqlite("customers.db")
+db = Sqlite("Your path/name of your preference")
